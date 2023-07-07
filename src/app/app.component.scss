@@ -1,0 +1,83 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main-body {
+  padding-top: 0px;
+  margin: 0 auto;
+  max-width: 100%;
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.action {
+  display: flex;
+  gap: 5px;
+}
+
+:host ::ng-deep.mat-mdc-form-field-infix {
+  min-height: 24px;
+}
+
+:host ::ng-deep.mat-mdc-text-field-wrapper {
+  width: 100%;
+}
+:host ::ng-deep.mat-mdc-text-field-wrapper {
+  width: 100%;
+  border-radius: 0px;
+  padding:20px;
+  background-color:#3D4EAF;
+}
+:host ::ng-deep.mat-mdc-paginator-icon{
+  fill: rgb(255, 255, 255);
+}
+mat-form-field input[placeholder="Search"]::placeholder {
+  color: #ffffff; /* Change the color to your desired value */
+    /* Add any additional styles as needed */
+}
+
+mat-form-field input[placeholder="Search"] {
+  color: #ffffff;
+}
+
+:host ::ng-deep.mat-mdc-form-field-bottom-align::before {
+  display:none;
+}
+
+:host ::ng-deep.mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix{
+  padding-top:0px;
+  padding-bottom: 0px;
+}
+
+:host ::ng-deep.mat-mdc-paginator-container {
+     background-color:#3F51B5;
+     color:#ffffff;
+}
+
+:host ::ng-deep.table-container {
+  width:100%;
+  overflow-x: scroll;
+  height: 943px;
+
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background: #3F51B5; 
+}
+
+

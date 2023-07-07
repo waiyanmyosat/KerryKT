@@ -1,0 +1,150 @@
+<html>
+<head>
+</head>
+
+<body>
+     <form [formGroup]="empForm" id="formTest" (ngSubmit)="onFormSubmit()">
+   <div class="sideOne">
+      <div mat-dialog-title>
+        <h1>Record Entry</h1>
+        <button class="print-button" type="button" (click)="threeFuntion()" onclick="bottomGo()">&#43;</button>
+        <button class="print-button"  type="button" onclick="printReceipt()">Print</button>
+      </div>
+      <!-- First set of fields -->
+
+      <input type="range" min="0" max="280" value="0" class="slider" id="mySlider" (input)="onSliderChange($event)">
+      <span class="slider-value">{{ sliderValue }}</span>
+      
+            
+      <div mat-dialog-content class="content">
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Customer Name</mat-label>
+            <input matInput placeholder="Customer Name" type="text" formControlName="s_customerName">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Customer Phone</mat-label>
+            <input matInput placeholder="Customer Phone" type="text" formControlName="s_customerPhone">
+            <mat-hint>In rupees</mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Receiver name</mat-label>
+            <input matInput type="text" formControlName="source{{var_1}}" placeholder="Receiver Name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Volume</mat-label>
+            <mat-select placeholder="Volume" formControlName="source{{var_2}}" #volume>
+              <mat-option *ngFor="let val of education" [value]="val">{{val}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Weight</mat-label>
+            <input matInput type="text" (blur)="productCondition()" placeholder="Weight" #weight>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Insurance</mat-label>
+            <input matInput type="text" placeholder="insurance" formControlName="source{{var_3}}">
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input matInput type="text" placeholder="price" formControlName="source{{var_4}}">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Tracking Code</mat-label>
+            <input matInput type="text" placeholder="Tracking Code" formControlName="source{{var_5}}" >
+          </mat-form-field>
+        </div>
+        
+      </div>
+      <div mat-dialog-actions class="action">
+        <button class="print-button"  type="button" [mat-dialog-close]="false">Cancel</button>
+        <button class="print-button"  form="formTest" type="submit">{{data ? 'Update': 'Save'}}</button>
+      </div>
+    </div>
+  <div class="sideTwo" id="scrolling_div">
+    <title>Receipt Template</title>
+
+    <div class="receipt" #receiptDiv>
+      <div class="provided-texts">
+        <div class="bold-text kerry-express">Kerry Express</div>
+        <div class="bold-text kawthaung">KawThaung</div>
+        <div class="myanmar-text">အချိုသာဆုံးဈေးနှုန်းဖြင့် ကော့သောင်းမြို့မှ တိုက်ရိုက် ထိုင်းနိူင်ငံအနှံ့
+          ပစ္စည်းပေးပို့နိူင်ပါပြီ</div>
+        <div class="myanmar-text">ကမ်းနားလမ်း ကော့သောင်းဘိုးဘိုး နတ်နန်းရှေ့</div>
+        <div class="myanmar-text">မြန်မာ 094 21486601 ထိုင်း 094 6825174</div>
+      </div>
+      <input type="text" formControlName="currentTime" class="time-date">
+        <div class="middle-box">
+          <div class="input-row">
+            <div>
+              <input type="text" formControlName="customerName" class="sender" placeholder="အမည်">
+            </div>
+          </div>
+          <div class="input-row">
+            <div>
+              <input type="text" formControlName="customerPhone" class="sender" placeholder="ဖုန်း">
+            </div>
+          </div>
+        </div>
+        <div class="receipt-container" id="receipt-container">
+          <div class="row-title">
+            <div><strong>အမည်</strong></div>
+            <div><strong class="volume">အရွယ်စား</strong></div>
+            <div><strong>အာမခံငွေ</strong></div>
+            <div><strong>ကျသင့်ငွေ</strong></div>
+          </div>
+        </div>
+        <div id="input-container" class="margin-topG">
+          <ng-container *ngFor="let nameControl of namesFormArray.controls; let i = index">
+            <ng-container *ngIf="i % 5 === 0">
+              <span class="list">
+                {{ (i / 5) + 1 }}.
+              </span>
+              <!-- Display the list number at the beginning of every 5th line with one space in front until 10 -->
+            </ng-container>
+           <input [formControlName]="'name' + (i + 1)"
+       [class]="'input-field' + getClassNumber(i)"
+       [placeholder]="(getClassNumber(i) % 10 === 1) ? ('အမည်' + (i+1)) :
+                       ((getClassNumber(i) % 10 === 2) ? ('အရွယ်စား' + (i+1)) :
+                       ((getClassNumber(i) % 10 === 3) ? ('အာမခံငွေ' + (i+1)) :
+                       ((getClassNumber(i) % 10 === 4) ? ('ကျသင့်ငွေ' + (i+1)) :
+                       ('စစ်ရန်ကုဒ်' + (i+1)))))"
+       (input)="calculateTotal()">
+            <ng-container *ngIf="(getClassNumber(i) + 0) % 4 === 0">
+              <strong class="baht">&#3647;</strong> <!-- Add the line beside every 4th line -->
+              <br> <!-- Add line break after the line -->
+            </ng-container>
+            <ng-container *ngIf="(i + 1) % 5 === 0">
+              <br> <!-- Add line break after every 5th line -->
+            </ng-container>
+          </ng-container>
+        </div>
+        <hr class="dashed">
+        <div class="input-row">
+          <div class="input-label">စုစုပေါင်း</div>
+          <div>
+            <input type="text" formControlName="total"  class="total" /><label class="t_lable">&#3647;</label>
+          </div>
+        </div>
+      <hr class="dashed">
+      <div class="qr-code">
+         <img src="assets\img\kerryqr.png" width="105" height="105" alt="QR Code">
+      </div>
+      <div class="additional-text">
+        // စကင်ဖတ်ပြီး KEX ဖြင့်စသော ကုတ်ကိုရိုက်ပြီး ပစ္စည်းတည်နေရာ စစ်ပါ //
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>

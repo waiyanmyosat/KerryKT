@@ -1,0 +1,371 @@
+.content {
+  padding-top: 10px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.action {
+
+  padding: 0px 25px 20px;
+  button {
+    flex: 1;
+  }
+}
+
+@font-face {
+  font-family: 'Padauk';
+  src: url('/src/assets/font/Padauk-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Padauk';
+  src: url('/src/assets/font/Padauk-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+
+.sideOne{
+
+  float:left;
+
+}
+.sideTwo{
+  float:right;
+  height: 594px; 
+  overflow: auto;
+  margin-left:260px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+}
+.sideTwo::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+.receipt {
+  width: 3.1in;
+  margin:0 auto;
+  padding: 0px;
+}
+.provided-texts {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.kerry-express {
+  font-size: 30px;
+  margin-top:3px;
+  font-weight:bold;
+}
+
+.kawthaung {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top:13px;
+  font-weight:bold;
+}
+
+.myanmar-text {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 20px;
+  font-family: 'Padauk';
+}
+
+.qr-code {
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.additional-text {
+  font-weight: bold;
+  font-size: 9px;
+  text-align: center;
+  margin-bottom: 55px;
+  font-family: 'Padauk';
+}
+
+::ng-deep.receipt-container {
+  margin-top: 20px;
+}
+::ng-deep.row {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+}
+.row-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 13px;
+  margin-right: 11px;
+background-color: black;
+color: white;
+width: 100%;
+font-family: 'Padauk';
+}
+
+
+.column {
+  flex-basis: 20%;
+  text-align: center;
+}
+
+.add-row-button,
+.print-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #3F51B5;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border:1px solid white;
+}
+
+.middle-box {
+  width: 2.5in;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px dashed #000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.baht {
+  font-size:10px;
+}
+::ng-deep.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+::ng-deep.input-label {
+  flex-basis: 30%;
+margin-left: 30px;
+font-weight: bold;
+}
+
+::ng-deep.input-field {
+  flex-basis: 70%;
+  text-align: left;
+  font-size: 9px;
+font-weight: bold;
+}
+
+
+.time-date {
+  text-align: center;
+  margin:auto;
+  display:block;
+  border:none;
+  margin-bottom: 4px;
+  width:156px;
+  font-size:11px;
+  font-weight:bold;
+
+}
+
+/* Dashed border */
+hr.dashed {
+  border-top: 1px dashed #000;
+}
+
+.button-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+::ng-deep.input-field1 {
+font-size: 10px;
+width:71px;
+text-align: left;
+font-weight:bold;
+border:none;
+margin-top:10px;
+font-family: 'Padauk';
+}
+.margin-topG{
+
+  margin-top: 10px;
+
+}
+::ng-deep.input-field2 {
+font-size: 10px;
+width: 70px;
+text-align: center;
+font-weight:bold;
+border:none;
+margin-top:10px;
+font-family: 'Padauk';
+}
+.time-picker-component .mat-form-field-infix {
+  display: inherit;
+}
+::ng-deep.input-field3 {
+font-size: 10px;
+width: 70px;
+text-align: center;
+font-weight:bold;
+border:none;
+margin-top:10px;
+font-family: 'Padauk';
+}
+::ng-deep.input-field4 {
+font-size: 10px;
+width: 44px;
+text-align: right;
+font-weight:bold;
+border:none;
+margin-top:10px;
+}
+::ng-deep.input-field5 {
+font-size: 10px;
+text-align: center;
+color:#000;
+text-align:left;
+border:none;
+font-weight:bold;
+margin-top:10px;
+font-family: 'Padauk';
+}
+
+::ng-deep.input-field6 {
+  font-size: 10px;
+  text-align: center;
+  color:#000;
+  text-align:left;
+  border:none;
+  font-weight:bold;
+  margin-top:10px;
+  font-family: 'Padauk';
+}
+
+.sender {
+border:none;
+border: none;
+padding: 7px;
+width: 110px;
+font-weight: bold;
+margin-left:50%;
+text-align:center;
+}
+
+.total {
+text-align:right;
+border:none;
+font-weight:bold;
+font-size:20px;
+width:80px;
+}
+
+::ng-deep.list {
+color:#000;
+font-size:11px;
+font-weight:bold;
+}
+.t_lable {
+color: #000;
+font-size:20px;
+font-weight: bold;
+}
+
+
+
+@media print {
+  body * {
+    visibility:hidden;
+  }
+  .receipt * {
+    visibility:visible;
+  }
+  .receipt  {
+    position: fixed;
+    top: 0;
+    left:0;
+    margin:4px;
+    width:3.1in;
+  }
+  ::ng-deep.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 0;
+    display:none;
+  }
+  ::ng-deep.mat-mdc-dialog-container .mdc-dialog__surface{
+    box-shadow: none;
+  }
+  ::ng-deep.main-body{
+  display: none;
+  }
+  ::ng-deep.mat-toolbar.mat-primary{
+    display:none;
+  }
+}
+
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 300px;
+  height: 10px;
+  border-radius: 2px;
+  margin-left:92px;
+  background: #d3d3d3;
+  outline: none;
+
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3F51B5;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3F51B5;
+  cursor: pointer;
+}
+
+#slider-value {
+  margin-top: 10px;
+}
+
+.slider::-webkit-slider-thumb::before {
+  content: attr(data-value);
+  position: absolute;
+  top: -30px;
+  left: -10px;
+  width: 40px;
+  height: 20px;
+  background: #3F51B5;
+  color: #ffffff;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 5px;
+}
+
