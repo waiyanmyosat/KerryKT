@@ -9,18 +9,18 @@ export class EmployeeService {
   constructor(private _http: HttpClient) {}
 
   addEmployee(data: any): Observable<any> {
-    return this._http.post('https://json-server-in.vercel.app/api/posts', data);
+    return this._http.post('https://json-server-in.vercel.app', data);
   }
 
   updateEmployee(id: number, data: any): Observable<any> {
-    return this._http.put('https://json-server-in.vercel.app/api/posts/${id}`, data);
+    return this._http.put('https://json-server-in.vercel.app${id}`, data);
   }
 
   getEmployeeList(): Observable<any> {
-    return this._http.get('https://json-server-in.vercel.app/api/posts');
+    return this._http.get('https://json-server-in.vercel.app/');
   }
 
   deleteEmployee(id: number): Observable<any> {
-    return this._http.delete(`https://json-server-in.vercel.app/api/posts/${id}`);
+    return this._http.delete(`https://json-server-in.vercel.app${id}`);
   }
 }
