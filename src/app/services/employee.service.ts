@@ -13,7 +13,7 @@ export class EmployeeService {
   }
 
   updateEmployee(id: number, data: any): Observable<any> {
-    return this._http.put(https://json-server-in.vercel.app/api/posts/${id}`, data);
+    return this._http.put('https://json-server-in.vercel.app/api/posts/${id}`, data);
   }
 
   getEmployeeList(): Observable<any> {
